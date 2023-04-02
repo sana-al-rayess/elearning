@@ -5,7 +5,7 @@ import Button from "../Button/button";
 import React, { useState } from "react";
 
 const NavAdmin = () => {
-	const [clicked, setClicked] = useState(false);
+	
 	
 	return (
 		<div className="navbar">
@@ -26,7 +26,7 @@ const NavAdmin = () => {
 				<Link to="/withdrawReq"className="linking">
 					Withdrawal Requests
 				</Link>
-				<Link to="/files" className="linking">
+				<Link to="/uploadfile" className="linking">
 					Upload Files
 				</Link>
 

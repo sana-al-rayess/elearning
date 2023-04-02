@@ -5,6 +5,7 @@ import RegistrationPage from "./Pages/RegistrationPage";
 import HomePage from "./Pages/HomePage";
 import AdminPage from "./Pages/AdminPage";
 import AddCourse from "./Pages/AddCourse";
+import UploadFilePage from "./Pages/UploadFilePage";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 				<Route path="/reg" element={<RegistrationPage />} />
 				<Route path="/admin" element={<AdminPage />} />
 				<Route path="/addcourse" element={<AddCourse />} />
+				<Route path="/uploadfile" element={<UploadFilePage />} />
 				<Route path="*" element={<div>404</div>} />
 			</Routes>
 		</BrowserRouter>
