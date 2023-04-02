@@ -18,7 +18,8 @@ function App() {
 				<Route path="/admin" element={<AdminPage />} />
 				<Route path="/addcourse" element={<AddCourse />} />
 				<Route path="/uploadfile" element={<UploadFilePage />} />
-				<Route path="*" element={<div>404</div>} />
+				{/* <Route path="*" element={<div>404</div>} /> */}
+				<Route path="*" element={<LoginPage />} />
 			</Routes>
 		</BrowserRouter>
 	);

@@ -11,4 +11,7 @@ const { addCourse } = require("../controllers/course.controllers")
 
 router.post("/addCourse", addCourse);
 
+const uploadFile = require("../controllers/file.controllers");
+router.post("/upload", uploadFile);
+
 module.exports = router;
