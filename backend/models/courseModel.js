@@ -9,9 +9,9 @@ const courseSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  instructor_id: {
+  instructor: {
     type: String,
-    ref: 'User',
+    
     required: true
   }
 });

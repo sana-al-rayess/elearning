@@ -5,4 +5,9 @@ const { getCourses } = require("../controllers/course.controllers")
 
 router.get('/getCourses', getCourses);
 
+
+
+const {createEnrollment} = require('../controllers/course.controllers');
+router.post('/enroll', createEnrollment);
+
 module.exports = router;

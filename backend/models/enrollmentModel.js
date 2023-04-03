@@ -1,8 +1,13 @@
 const mongoose = require("mongoose");
 
 const enrollmentSchema = new mongoose.Schema({
-    user_id: { 
-      type: mongoose.Schema.Types.ObjectId, 
+    // user_id: { 
+    //   type: mongoose.Schema.Types.ObjectId, 
+    //   ref: 'User', 
+    //   required: true 
+    // },
+    user_email: { 
+      type: String, 
       ref: 'User', 
       required: true 
     },

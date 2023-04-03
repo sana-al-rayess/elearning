@@ -14,4 +14,8 @@ router.post("/addCourse", addCourse);
 const uploadFile = require("../controllers/file.controllers");
 router.post("/upload", uploadFile);
 
+// const getEnrolledCourses = require("../controllers/enrollment.controllers");
+// router.get("/:userId/getEnrolled", getEnrolledCourses);
+
+
 module.exports = router;
