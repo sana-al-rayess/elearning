@@ -8,8 +8,11 @@ router.get('/getCourses', getCourses);
 const {createEnrollment} = require('../controllers/course.controllers');
 router.post('/enroll', createEnrollment);
 
-module.exports = router;
-
 
 const {createWithdrawal} = require('../controllers/course.controllers');
 router.post('/withdraw', createWithdrawal);
+
+const {approveWithdrawal} = require('../controllers/course.controllers');
+router.post('/approve', approveWithdrawal);
+
+module.exports = router;
