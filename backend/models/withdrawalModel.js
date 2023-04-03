@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 
 const withdrawalSchema = new mongoose.Schema({
-    user_id: { 
+    user_email: { 
       type: String, 
       ref: 'User', 
       required: true 
