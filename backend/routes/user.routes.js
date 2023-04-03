@@ -18,5 +18,8 @@ router.post('/:id/approve', approveWithdrawal);
 const {rejectWithdrawal} = require('../controllers/withdrawal.controller');
 router.post('/:id/reject', rejectWithdrawal);
 
+const {listEnrolledStudents} = require('../controllers/course.controllers');
+router.get('/:id/students', listEnrolledStudents);
+
 module.exports = router;
 

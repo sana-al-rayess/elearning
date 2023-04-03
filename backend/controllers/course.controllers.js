@@ -54,6 +54,18 @@ exports.addCourse = async (req, res) => {
     }
   }
  
+  exports.listEnrolledStudents = async (req, res) => {
+    try {
+      const enrolledStudents = await Enrollment.find()
+        .populate('user_email', 'name email')
+        .populate('course_id', 'name');
+  
+      return res.status(200).json(enrolledStudents);
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ message: 'Internal server error' });
+    }
+  };
   
 
   
