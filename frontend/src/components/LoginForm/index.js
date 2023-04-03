@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./login.css";
 
 function LoginForm() {
@@ -26,6 +27,29 @@ function LoginForm() {
 		if (!formData.get("password")) {
 			setPasswordError("Please enter a password");
 			return;
+		}
+
+		try {
+			const response = await axios.post(
+				"http://localhost:3008/auth/login",
+				formData
+			);
+			const { user, authorization } = response.data;
+			localStorage.setItem("token", authorization.token);
+			localStorage.setItem("name", response.data.user.name);
+			localStorage.setItem("user_id", response.data.user.id);
+			localStorage.setItem("email", response.data.user.email);
+			console.log("User created successfully:", user);
+
+			if (response.data.user.role == "admin") {
+				window.location.href = "/admin";
+			} else {
+				window.location.href = "/Home";
+			}
+		} catch (error) {
+			setLoginError("Incorrect Credentials");
+			form.reset();
+			console.error(error);
 		}
 
 		
