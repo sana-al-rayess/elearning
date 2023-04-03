@@ -9,10 +9,14 @@ const {createEnrollment} = require('../controllers/course.controllers');
 router.post('/enroll', createEnrollment);
 
 
-const {createWithdrawal} = require('../controllers/course.controllers');
+const {createWithdrawal} = require('../controllers/withdrawal.controller');
 router.post('/withdraw', createWithdrawal);
 
-const {approveWithdrawal} = require('../controllers/course.controllers');
-router.post('/approve', approveWithdrawal);
+const {approveWithdrawal} = require('../controllers/withdrawal.controller');
+router.post('/:id/approve', approveWithdrawal);
+
+const {rejectWithdrawal} = require('../controllers/withdrawal.controller');
+router.post('/:id/reject', rejectWithdrawal);
 
 module.exports = router;
+

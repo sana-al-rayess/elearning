@@ -54,28 +54,10 @@ exports.addCourse = async (req, res) => {
     }
   }
  
-  exports.createWithdrawal = async (req, res) => {
-    try {
-      const user = await User.findOne({ email: req.body.email });
-      if (!user) {
-        return res.status(404).json({ message: 'User not found' });
-      }
   
-      const enrollment = await Enrollment.findOne({ user_email: user.email, course_id: req.body.course_id });
-      if (!enrollment) {
-        return res.status(404).json({ message: 'Enrollment not found' });
-      }
+
   
-      const withdrawal = new Withdrawal({
-        user_email: user.email,
-        course_id: enrollment.course_id,
-        reason: req.body.reason
-      });
-      await withdrawal.save();
   
-      return res.status(201).json({ message: 'Withdrawal request submitted successfully' });
-    } catch (error) {
-      console.error(error);
-      return res.status(500).json({ message: 'Internal server error' });
-    }
-  };
+  
+  
+  
